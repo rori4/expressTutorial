@@ -1,6 +1,10 @@
 const express = require('express')
 let app = express()
+const exphbs = require('express-handlebars')
 const port = 3000
+
+app.engine('handlebars', exphbs())
+app.set('view engine', 'handlebars')
 
 const users = [
 	{name: 'Peter', age: 24},
@@ -8,11 +12,7 @@ const users = [
 ]
 
 app.get('/', (req, res, next) => {
-	req.user = users.find(u => u.name === 'Peter')
-	next()
-}, (req, res) => {
-	const user = req.user || {}
-	res.send(`Welcome Home,${user.name}`)
+	res.render('home')
 })
 
 
