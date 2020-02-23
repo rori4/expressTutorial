@@ -12,7 +12,7 @@ const users = [
 ]
 
 app.get('/', (req, res, next) => {
-	res.render('home')
+	res.render('home', { users: users})
 })
 
 
