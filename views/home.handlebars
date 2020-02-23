@@ -1,9 +1,5 @@
-<div>
-	{{#each users}}
-	{{#if this.display}}
-	<p>Hello, {{this.name}}, you are {{this.age}} years old!</p>
-	{{else}}
-	<p>This user is secret! Sorry!</p>
-	{{/if}}
+<ul>
+	{{#each websites}}
+		<li>{{link this.text this.url}}</li>
 	{{/each}}
-</div>
+</ul>
